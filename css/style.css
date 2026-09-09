@@ -575,7 +575,7 @@ p { margin: 0 0 1em; }
   .hero__quote--top { padding-inline: 0; }
   /* Top quote in white against the deep blue sky (ink recoloured via filter) */
   .hero__quote--top .hero__quote-img {
-    width: 64%;
+    width: 54%;
     filter:
       brightness(0) invert(1)
       drop-shadow(0 2px 3px rgba(0, 0, 0, 0.55))
@@ -590,8 +590,8 @@ p { margin: 0 0 1em; }
       drop-shadow(0 2px 2px rgba(0, 0, 0, 0.45))
       drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
   }
-  .hero__logo .hero__tagline { width: 64%; margin-top: -0.1rem; }
-  .hero__quote--bottom .hero__quote-img { width: 58%; }
+  .hero__logo .hero__tagline { width: 76%; margin-top: -0.1rem; }
+  .hero__quote--bottom .hero__quote-img { width: 53%; }
 }
 
 /* ---------- Sections ---------- */
