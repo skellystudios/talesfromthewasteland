@@ -133,6 +133,20 @@
               </div>
               <p class="poster-hint" id="short-status" role="status"></p>
               <p class="poster-hint" id="qr-encodes"></p>
+              <div class="poster-range">
+                <label for="qr-scale">QR code size <output for="qr-scale" id="qr-scale-out">100%</output></label>
+                <input type="range" id="qr-scale" min="60" max="160" value="100" step="1">
+              </div>
+              <div class="poster-range poster-range--pair">
+                <div>
+                  <label for="qr-dx">Left / right <output for="qr-dx" id="qr-dx-out">0</output></label>
+                  <input type="range" id="qr-dx" min="-400" max="150" value="0" step="2">
+                </div>
+                <div>
+                  <label for="qr-dy">Up / down <output for="qr-dy" id="qr-dy-out">0</output></label>
+                  <input type="range" id="qr-dy" min="-150" max="150" value="0" step="2">
+                </div>
+              </div>
             </fieldset>
 
             <fieldset class="poster-fieldset poster-fieldset--export">

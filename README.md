@@ -94,6 +94,8 @@ just open the URL directly. Everything runs in the browser — there is no serve
 4. **Link** — paste the ticket URL and click *Shorten with TinyURL*
    (falls back to is.gd). The short link is what the QR code encodes, so it stays
    easy to scan when printed. Tick *Use the full URL instead* to skip shortening.
+   The QR panel has its own size and nudge sliders; it grows from its right edge
+   inwards, and the text shrinks automatically if the panel gets close to it.
 5. **Export** — *Download PDF* or *Download PNG*.
 
 Output is 4267 × 6033 px, identical to the Photoshop documents (361 × 511 mm at

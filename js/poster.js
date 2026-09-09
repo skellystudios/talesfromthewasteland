@@ -56,6 +56,9 @@
     logoDy: $('logo-dy'), logoDyOut: $('logo-dy-out'),
     url: $('link-url'), shorten: $('shorten'), useFull: $('use-full'),
     shortStatus: $('short-status'), qrEncodes: $('qr-encodes'),
+    qrScale: $('qr-scale'), qrScaleOut: $('qr-scale-out'),
+    qrDx: $('qr-dx'), qrDxOut: $('qr-dx-out'),
+    qrDy: $('qr-dy'), qrDyOut: $('qr-dy-out'),
     fileName: $('file-name'),
     downloadPdf: $('download-pdf'), downloadPng: $('download-png'),
     exportStatus: $('export-status'), resetAll: $('reset-all'),
@@ -73,6 +76,7 @@
     allCaps: true, textScale: 100, textDy: 0,
     logoData: null, logoMode: 'white-alpha', logoScale: 100, logoDx: 0, logoDy: 0,
     url: '', shortUrl: '', useFull: false,
+    qrScale: 100, qrDx: 0, qrDy: 0,
     fileName: ''
   };
   var state = Object.assign({}, defaults);
@@ -179,7 +183,8 @@
     var capH = T.capHeight * fontPx;
     var cy = (T.cy + state.textDy) * s;
     var cx = T.cx * s;
-    var maxW = T.maxWidth * s;
+    // Keep the text clear of the QR panel if it has been enlarged or moved left.
+    var maxW = Math.min(T.maxWidth, 2 * (qrPanel().x - 60 - T.cx)) * s;
 
     var l1 = displayText(state.line1);
     var l2 = displayText(state.line2);
@@ -257,10 +262,22 @@
     ctx.closePath();
   }
 
+  // The white panel in template px after the user's size / nudge adjustments.
+  // Scaling is anchored to the panel's right edge and vertical centre so a
+  // bigger code grows into the poster rather than off the edge.
+  function qrPanel() {
+    var Q = LAYOUT.qr;
+    var k = state.qrScale / 100;
+    var size = Q.size * k;
+    var right = Q.x + Q.size + state.qrDx;
+    var cy = Q.y + Q.size / 2 + state.qrDy;
+    return { x: right - size, y: cy - size / 2, size: size, radius: Q.radius * k, pad: Q.pad * k };
+  }
+
   // Returns the QR geometry in template px so the PDF can draw it as vectors too.
   function qrGeometry() {
     if (!qrModel) return null;
-    var Q = LAYOUT.qr;
+    var Q = qrPanel();
     var n = qrModel.getModuleCount();
     var inner = Q.size - Q.pad * 2;
     var cell = inner / n;
@@ -549,6 +566,9 @@
     els.logoScaleOut.value = state.logoScale + '%';
     els.logoDxOut.value = (state.logoDx > 0 ? '+' : '') + state.logoDx;
     els.logoDyOut.value = (state.logoDy > 0 ? '+' : '') + state.logoDy;
+    els.qrScaleOut.value = state.qrScale + '%';
+    els.qrDxOut.value = (state.qrDx > 0 ? '+' : '') + state.qrDx;
+    els.qrDyOut.value = (state.qrDy > 0 ? '+' : '') + state.qrDy;
   }
 
   function applyStateToInputs() {
@@ -563,6 +583,9 @@
     els.logoDy.value = state.logoDy;
     els.url.value = state.url;
     els.useFull.checked = !!state.useFull;
+    els.qrScale.value = state.qrScale;
+    els.qrDx.value = state.qrDx;
+    els.qrDy.value = state.qrDy;
     els.fileName.value = state.fileName;
     if (state.shortUrl) setShortStatus('Short link: ' + state.shortUrl, 'ok');
     syncOutputs();
@@ -592,6 +615,9 @@
   bindRange(els.logoScale, 'logoScale');
   bindRange(els.logoDx, 'logoDx');
   bindRange(els.logoDy, 'logoDy');
+  bindRange(els.qrScale, 'qrScale');
+  bindRange(els.qrDx, 'qrDx');
+  bindRange(els.qrDy, 'qrDy');
 
   els.allCaps.addEventListener('change', function () {
     state.allCaps = els.allCaps.checked; saveState(); scheduleRender();
