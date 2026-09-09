@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Poster Generator — Tales From The Wasteland</title>
+  <meta name="description" content="Internal tool: build a print-ready Tales From The Wasteland show poster.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@500;600&family=Kalam:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/poster.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="index.html" aria-label="Tales From The Wasteland — home">
+        <img src="assets/logo-white-mobile.png" alt="Tales From The Wasteland" width="400" height="117">
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shows.html">Shows</a></li>
+        <li><a href="about.html">About the Show</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="work-with-us.html">Work With Us</a></li>
+        <li><a href="cast.html">Cast</a></li>
+        <li class="nav__book-mobile-li"><a class="nav__book-mobile" href="shows.html">Book Now</a></li>
+      </ul>
+      <a class="btn nav__book" href="shows.html">Book Now</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head page-head--compact">
+      <div class="wrap">
+        <span class="eyebrow">Internal tool</span>
+        <h1 class="display h-lg">Poster generator</h1>
+        <p>Pick a cast line-up, type the two bottom lines, drop in the venue logo and paste the ticket link. Downloads a 4267&times;6033 px (300&nbsp;dpi) PNG or PDF that matches the Photoshop template.</p>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="wrap">
+        <div class="poster-tool">
+
+          <!-- ================= CONTROLS ================= -->
+          <form class="form poster-controls" id="poster-form" autocomplete="off" novalidate>
+
+            <div class="poster-notice poster-notice--warn" id="font-warning" hidden role="status">
+              <strong>Futura Condensed Medium isn&rsquo;t available in this browser.</strong>
+              The preview and exports will use Barlow Condensed instead. Open this page on a Mac (Futura is built in) or add <code>fonts/FuturaCondensedMedium.woff2</code> to the site.
+            </div>
+
+            <fieldset class="poster-fieldset">
+              <legend>1. Cast line-up</legend>
+              <div class="poster-versions" id="version-list" role="radiogroup" aria-label="Cast line-up">
+                <!-- filled from assets/poster/templates.json -->
+              </div>
+            </fieldset>
+
+            <fieldset class="poster-fieldset">
+              <legend>2. Bottom lines</legend>
+              <div>
+                <label for="line1">Line 1</label>
+                <input type="text" id="line1" name="line1" placeholder="FRIDAY 14 NOVEMBER • 7:00 PM • £12" spellcheck="false">
+              </div>
+              <div>
+                <label for="line2">Line 2</label>
+                <input type="text" id="line2" name="line2" placeholder="BRISTOL FOLK HOUSE • BRISTOLFOLKHOUSE.CO.UK" spellcheck="false">
+              </div>
+              <div class="poster-inline">
+                <button class="btn btn--small" type="button" id="insert-bullet" title="Insert a separator at the cursor">Insert &bull;</button>
+                <button class="btn btn--small" type="button" id="swap-lines">Swap lines</button>
+                <label class="poster-check"><input type="checkbox" id="all-caps" checked> All caps</label>
+              </div>
+              <div class="poster-range">
+                <label for="text-scale">Text size <output for="text-scale" id="text-scale-out">100%</output></label>
+                <input type="range" id="text-scale" min="60" max="140" value="100" step="1">
+              </div>
+              <div class="poster-range">
+                <label for="text-dy">Nudge up / down <output for="text-dy" id="text-dy-out">0</output></label>
+                <input type="range" id="text-dy" min="-120" max="120" value="0" step="2">
+              </div>
+              <p class="poster-hint" id="fit-hint" hidden>A line is wider than the space between the logo and the QR code, so it has been shrunk to fit. Shorten the text or reduce the size to keep both lines matching.</p>
+            </fieldset>
+
+            <fieldset class="poster-fieldset">
+              <legend>3. Venue logo</legend>
+              <div>
+                <label for="logo-file">Logo file <span class="dim">(PNG with transparency is best; SVG or JPG also work)</span></label>
+                <input type="file" id="logo-file" accept="image/png,image/svg+xml,image/jpeg,image/webp">
+              </div>
+              <div class="poster-inline">
+                <label for="logo-mode">Colour</label>
+                <select id="logo-mode">
+                  <option value="white-alpha">White (keep transparency)</option>
+                  <option value="white-luma">White (from dark logo on light background)</option>
+                  <option value="original">As uploaded</option>
+                </select>
+                <button class="btn btn--small" type="button" id="logo-clear">Remove</button>
+              </div>
+              <div class="poster-range">
+                <label for="logo-scale">Logo size <output for="logo-scale" id="logo-scale-out">100%</output></label>
+                <input type="range" id="logo-scale" min="40" max="160" value="100" step="1">
+              </div>
+              <div class="poster-range poster-range--pair">
+                <div>
+                  <label for="logo-dx">Left / right <output for="logo-dx" id="logo-dx-out">0</output></label>
+                  <input type="range" id="logo-dx" min="-150" max="400" value="0" step="2">
+                </div>
+                <div>
+                  <label for="logo-dy">Up / down <output for="logo-dy" id="logo-dy-out">0</output></label>
+                  <input type="range" id="logo-dy" min="-150" max="150" value="0" step="2">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="poster-fieldset">
+              <legend>4. Ticket link &amp; QR code</legend>
+              <div>
+                <label for="link-url">Link</label>
+                <input type="url" id="link-url" name="url" placeholder="https://www.bristolfolkhouse.co.uk/events/…" spellcheck="false" inputmode="url">
+              </div>
+              <div class="poster-inline">
+                <button class="btn btn--small btn--solid" type="button" id="shorten">Shorten with TinyURL</button>
+                <label class="poster-check"><input type="checkbox" id="use-full"> Use the full URL instead</label>
+              </div>
+              <p class="poster-hint" id="short-status" role="status"></p>
+              <p class="poster-hint" id="qr-encodes"></p>
+            </fieldset>
+
+            <fieldset class="poster-fieldset poster-fieldset--export">
+              <legend>5. Export</legend>
+              <div>
+                <label for="file-name">File name</label>
+                <input type="text" id="file-name" placeholder="wasteland-poster">
+              </div>
+              <div class="poster-inline">
+                <button class="btn btn--solid btn--lg" type="button" id="download-pdf">Download PDF</button>
+                <button class="btn btn--lg" type="button" id="download-png">Download PNG</button>
+              </div>
+              <p class="poster-hint" id="export-status" role="status"></p>
+              <p class="poster-hint">Both files are 4267&times;6033&nbsp;px, the same as the Photoshop template (361&times;511&nbsp;mm at 300&nbsp;dpi; scales cleanly to A3). The PDF page is 1024.08&times;1447.92&nbsp;pt, matching the originals, with the QR code drawn as vectors.</p>
+              <div class="poster-inline">
+                <button class="btn btn--small btn--ghost" type="button" id="reset-all">Start again</button>
+              </div>
+            </fieldset>
+          </form>
+
+          <!-- ================= PREVIEW ================= -->
+          <div class="poster-preview">
+            <div class="poster-preview__frame">
+              <canvas id="preview" width="1000" height="1414" aria-label="Poster preview"></canvas>
+              <div class="poster-preview__loading" id="preview-loading">Loading template&hellip;</div>
+            </div>
+            <p class="poster-hint poster-preview__caption">Live preview. Text, logo and QR code are drawn exactly as they will be exported.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__bottom">
+        <span>&copy; <span data-year>2026</span> Tales From The Wasteland</span>
+        <span>Artwork: Cloak &middot; Photography: Lee Pullen</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/poster.js"></script>
+</body>
+</html>

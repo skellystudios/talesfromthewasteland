@@ -1,0 +1,30 @@
+{
+  "_comment": "Cast line-ups for poster.html. Each is the Photoshop poster flattened with the bottom text, venue logo and QR layers hidden. See README.md → Poster generator for how to add one.",
+  "document": { "width": 4267, "height": 6033, "pdfPagePt": [1024.08, 1447.92] },
+  "templates": [
+    {
+      "id": "folk-house",
+      "label": "Folk House / ACTA line-up",
+      "source": "wasteland - folk house.psd (also acta - style b)",
+      "full": "assets/poster/template-folk-house.jpg",
+      "preview": "assets/poster/template-folk-house-preview.jpg",
+      "thumb": "assets/poster/template-folk-house-thumb.jpg"
+    },
+    {
+      "id": "hen-chicken",
+      "label": "Hen & Chicken / Tobacco Factory line-up",
+      "source": "wasteland - hen+chicken.psd (also tobacco factory 1 & 2)",
+      "full": "assets/poster/template-hen-chicken.jpg",
+      "preview": "assets/poster/template-hen-chicken-preview.jpg",
+      "thumb": "assets/poster/template-hen-chicken-thumb.jpg"
+    },
+    {
+      "id": "loco-klub",
+      "label": "Loco Klub / Camden line-up",
+      "source": "wasteland - locoKlub.psd (also cameden2)",
+      "full": "assets/poster/template-loco-klub.jpg",
+      "preview": "assets/poster/template-loco-klub-preview.jpg",
+      "thumb": "assets/poster/template-loco-klub-thumb.jpg"
+    }
+  ]
+}
