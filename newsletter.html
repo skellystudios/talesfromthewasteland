@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Newsletter — Tales From The Wasteland</title>
+  <meta name="description" content="Join the Tales From The Wasteland newsletter for show dates, ticket drops and dispatches from the wasteland.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@500;600&family=Kalam:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="index.html" aria-label="Tales From The Wasteland — home">
+        <img src="assets/logo-white-mobile.png" alt="Tales From The Wasteland" width="1200" height="352">
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shows.html">Shows</a></li>
+        <li><a href="about.html">About the Show</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="work-with-us.html">Work With Us</a></li>
+        <li><a href="cast.html">Cast</a></li>
+        <li class="nav__book-mobile-li"><a class="nav__book-mobile" href="shows.html">Book Now</a></li>
+      </ul>
+      <a class="btn nav__book" href="shows.html">Book Now</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">Newsletter</span>
+        <h1 class="display h-xl">Dispatches from the wasteland</h1>
+        <p>Show dates, ticket drops, festival news and the occasional photo of Morty&rsquo;s skull. A few emails a year &mdash; we&rsquo;re too busy fighting over scarce resources to spam you.</p>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="wrap two-col">
+        <div>
+          <!--
+            Wire this up to your email provider:
+            - Mailchimp: replace action with your embedded-form URL (…/subscribe/post?u=…&id=…),
+              set method="post", name the email field "EMAIL" and first name "FNAME".
+            - Other providers (Buttondown, Mailerlite, Formspree…) work the same way.
+            Then delete data-demo="true" so the form actually submits.
+          -->
+          <form class="form" action="#" method="post" data-demo="true"
+                data-success="You're in. Keep an eye on your inbox — and your back.">
+            <div class="form__row">
+              <div>
+                <label for="nl-name">First name</label>
+                <input type="text" id="nl-name" name="FNAME" autocomplete="given-name">
+              </div>
+              <div>
+                <label for="nl-email">Email <span aria-hidden="true">*</span></label>
+                <input type="email" id="nl-email" name="EMAIL" required autocomplete="email">
+              </div>
+            </div>
+            <div class="check">
+              <input type="checkbox" id="nl-consent" name="consent" required>
+              <label for="nl-consent">Yes, send me news about Tales From The Wasteland shows. I can unsubscribe at any time.</label>
+            </div>
+            <div>
+              <button class="btn btn--solid" type="submit">Sign me up</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="prose">
+          <h2 class="display h-md">What you&rsquo;ll get</h2>
+          <ul>
+            <li>New show dates before they go public</li>
+            <li>Early access to festival runs and one-off specials</li>
+            <li>The odd behind-the-scenes photo, rehearsal disaster or cast confession</li>
+          </ul>
+          <p class="dim">We&rsquo;ll never share your details with anyone &mdash; not even the raiders.</p>
+          <p>Prefer social? Follow <a href="https://www.instagram.com/wasteland_improv/" target="_blank" rel="noopener">@wasteland_improv</a> on Instagram.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <a class="footer__logo" href="index.html"><img src="assets/logo-white-mobile.png" alt="Tales From The Wasteland" width="1200" height="352"></a>
+          <p>An improvised post-apocalyptic adventure comedy from Bristol. Born out of the Bristol Improv Theatre&rsquo;s Unscripted Players programme, now roaming the wasteland at large.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="shows.html">Shows</a></li>
+            <li><a href="about.html">About the Show</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="cast.html">Cast</a></li>
+            <li><a href="work-with-us.html">Work With Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/wasteland_improv/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/wastelandimprov" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="mailto:wastelandimprov@gmail.com">wastelandimprov@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year>2026</span> Tales From The Wasteland</span>
+        <span>Artwork: Cloak &middot; Photography: Lee Pullen</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

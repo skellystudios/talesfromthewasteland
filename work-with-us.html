@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work With Us — Tales From The Wasteland</title>
+  <meta name="description" content="Book Tales From The Wasteland for your venue, festival or event, or get in touch about workshops and collaborations.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@500;600&family=Kalam:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="index.html" aria-label="Tales From The Wasteland — home">
+        <img src="assets/logo-white-mobile.png" alt="Tales From The Wasteland" width="1200" height="352">
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shows.html">Shows</a></li>
+        <li><a href="about.html">About the Show</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="work-with-us.html" aria-current="page">Work With Us</a></li>
+        <li><a href="cast.html">Cast</a></li>
+        <li class="nav__book-mobile-li"><a class="nav__book-mobile" href="shows.html">Book Now</a></li>
+      </ul>
+      <a class="btn nav__book" href="shows.html">Book Now</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">Work with us</span>
+        <h1 class="display h-xl">Bring the apocalypse to you</h1>
+        <p>We&rsquo;re a road-tested touring show with a loyal following, a two-hour narrative format and a set that fits in the back of a car. Venues, festivals, programmers and fellow improvisers &mdash; let&rsquo;s talk.</p>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="wrap">
+        <div class="grid-3">
+          <div class="card">
+            <h3 class="display">Venues &amp; festivals</h3>
+            <p>We&rsquo;ve played studio theatres, pubs, community venues and fringe festivals across Bristol and London &mdash; from the Tobacco Factory to the Camden Fringe. The show runs around two hours with an interval and needs very little tech: a few lights, a few chairs, and an audience willing to write one thing down.</p>
+          </div>
+          <div class="card">
+            <h3 class="display">Private &amp; corporate events</h3>
+            <p>Team away-day? Birthday? Company Christmas party that&rsquo;s bored of quizzes? We can build a story around your suggestions, your in-jokes or your CEO&rsquo;s worst habits. Runs from 45 minutes to a full evening.</p>
+          </div>
+          <div class="card">
+            <h3 class="display">Workshops &amp; collaborations</h3>
+            <p>Narrative improv, world-building, genre play and the fine art of committing to a bad accent. We run sessions for improv groups and community organisations, and we&rsquo;re always up for double-bills with other shows.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sand">
+      <div class="wrap two-col">
+        <div class="prose">
+          <span class="eyebrow">Get in touch</span>
+          <h2 class="display h-lg">Tell us what you&rsquo;re planning</h2>
+          <p>Drop a few details in the form and we&rsquo;ll come back to you &mdash; usually within a couple of days, unless the water supply has been seized by raiders again.</p>
+          <p class="dim">
+            <!-- Replace with your real contact address. -->
+            Prefer email? <a href="mailto:wastelandimprov@gmail.com">wastelandimprov@gmail.com</a>
+          </p>
+        </div>
+
+        <!--
+          Wire this up to Formspree (action="https://formspree.io/f/yourid"), Netlify Forms,
+          or your own endpoint, then delete data-demo="true".
+        -->
+        <form class="form" action="#" method="post" data-demo="true"
+              data-success="Message received. We'll be in touch — assuming we survive the week.">
+          <div class="form__row">
+            <div>
+              <label for="w-name">Your name <span aria-hidden="true">*</span></label>
+              <input type="text" id="w-name" name="name" required autocomplete="name">
+            </div>
+            <div>
+              <label for="w-email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="w-email" name="email" required autocomplete="email">
+            </div>
+          </div>
+          <div>
+            <label for="w-type">What is it?</label>
+            <select id="w-type" name="type">
+              <option>Venue or festival booking</option>
+              <option>Private or corporate event</option>
+              <option>Workshop</option>
+              <option>Collaboration / double-bill</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div>
+            <label for="w-msg">Details <span aria-hidden="true">*</span></label>
+            <textarea id="w-msg" name="message" required placeholder="Where, when, how many people, and anything else we should know."></textarea>
+          </div>
+          <div>
+            <button class="btn btn--solid" type="submit">Send message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <a class="footer__logo" href="index.html"><img src="assets/logo-white-mobile.png" alt="Tales From The Wasteland" width="1200" height="352"></a>
+          <p>An improvised post-apocalyptic adventure comedy from Bristol. Born out of the Bristol Improv Theatre&rsquo;s Unscripted Players programme, now roaming the wasteland at large.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="shows.html">Shows</a></li>
+            <li><a href="about.html">About the Show</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="cast.html">Cast</a></li>
+            <li><a href="work-with-us.html">Work With Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/wasteland_improv/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/wastelandimprov" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="mailto:wastelandimprov@gmail.com">wastelandimprov@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year>2026</span> Tales From The Wasteland</span>
+        <span>Artwork: Cloak &middot; Photography: Lee Pullen</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

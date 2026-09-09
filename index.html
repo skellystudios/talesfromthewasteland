@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tales From The Wasteland — Post-Apocalyptic Improvised Comedy</title>
+  <meta name="description" content="Tales From The Wasteland is an improvised post-apocalyptic adventure comedy from Bristol. One audience suggestion. One brand-new story. Raiders, mutants and far too much cannibalism.">
+  <meta property="og:title" content="Tales From The Wasteland">
+  <meta property="og:description" content="A post-apocalyptic improvised comedy. One audience suggestion, one brand-new story, every single night.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/hero.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@500;600&family=Kalam:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="index.html" aria-label="Tales From The Wasteland — home">
+        <img src="assets/logo-white-mobile.png" alt="Tales From The Wasteland" width="1200" height="352">
+      </a>
+
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="shows.html">Shows</a></li>
+        <li><a href="about.html">About the Show</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="work-with-us.html">Work With Us</a></li>
+        <li><a href="cast.html">Cast</a></li>
+        <li class="nav__book-mobile-li"><a class="nav__book-mobile" href="shows.html">Book Now</a></li>
+      </ul>
+
+      <a class="btn nav__book" href="shows.html">Book Now</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" aria-labelledby="hero-title">
+      <!-- Layered artwork: desert background (CSS) + transparent cast cut-out -->
+      <div class="hero__art" aria-hidden="true">
+        <picture>
+          <source type="image/webp"
+                  srcset="assets/cast-group-mobile.webp 760w, assets/cast-group.webp 1400w"
+                  sizes="(max-width: 900px) 80vw, 45vw">
+          <img class="hero__cast"
+               src="assets/cast-group.png"
+               srcset="assets/cast-group-mobile.png 760w, assets/cast-group.png 1400w"
+               sizes="(max-width: 900px) 80vw, 45vw"
+               alt="" width="1400" height="1673" fetchpriority="high">
+        </picture>
+      </div>
+
+      <div class="hero__inner">
+        <div class="hero__col">
+          <blockquote class="hero__quote hero__quote--top">
+            <img class="hero__quote-img" src="assets/quote-raucous.png" alt="&lsquo;A raucous and zany atmosphere&rsquo;" width="1000" height="192">
+            <cite>The Everyday</cite>
+          </blockquote>
+
+          <h1 class="hero__logo" id="hero-title">
+            <picture>
+              <source media="(max-width: 900px)" srcset="assets/logo-yellow-mobile.png" width="1200" height="352">
+              <img src="assets/logo-yellow.png" alt="Tales From The Wasteland" width="1024" height="266">
+            </picture>
+            <img class="hero__tagline" src="assets/tagline.png" alt="A Post-Apocalyptic Improvised Comedy" width="946" height="273">
+          </h1>
+
+          <blockquote class="hero__quote hero__quote--bottom">
+            <img class="hero__quote-img" src="assets/quote-gritty.png" alt="&lsquo;At once gritty and oddly endearing&rsquo;" width="997" height="205">
+            <cite>Bristol 24/7</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INTRO ================= -->
+    <section class="section section--dark">
+      <div class="wrap two-col">
+        <div>
+          <span class="eyebrow">What is this?</span>
+          <h2 class="display h-lg">If the world was ending, what&rsquo;s the one thing you&rsquo;d want to survive?</h2>
+        </div>
+        <div class="prose">
+          <p class="lede">Tales From The Wasteland is an improvised post-apocalyptic adventure comedy. Our twisted and talented cast of wastelanders take a single suggestion from you and craft an entire narrative show &mdash; with no pre-prepared characters, story or dialogue.</p>
+          <p>Join us as we explore a new world and find out what&rsquo;s left over after Earth&rsquo;s devastation. Expect raiders, mutants and violence over scarce resources in an absurd dark comedy inspired by classics of the genre: <em>Mad Max</em>, <em>The Last of Us</em> and <em>Fallout</em>.</p>
+          <p><a class="btn" href="about.html">About the show</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SHOWS ================= -->
+    <section class="section section--dark2" id="shows">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="eyebrow">Upcoming shows</span>
+          <h2 class="display h-lg">Come and survive with us</h2>
+        </div>
+
+        <!-- Dates live in js/shows.js — edit that file to add or change shows. -->
+        <ul class="shows" data-shows-list data-limit="4"></ul>
+
+        <p class="more" data-shows-more hidden><a class="btn btn--ghost" href="shows.html">See all dates</a></p>
+
+        <p class="notice" data-shows-empty hidden>New dates are announced on Instagram first. Follow <a href="https://www.instagram.com/wasteland_improv/" target="_blank" rel="noopener">@wasteland_improv</a> to hear about them before everyone else.</p>
+      </div>
+    </section>
+
+    <!-- ================= REVIEWS ================= -->
+    <section class="section section--dark">
+      <div class="wrap">
+        <div class="section__head section__head--center">
+          <span class="eyebrow">Word from the wasteland</span>
+          <h2 class="display h-lg">What the critics said</h2>
+        </div>
+
+        <div class="reviews">
+          <blockquote class="review review--long">
+            <p>&ldquo;They have the audience in stitches, thanks to sharp timing and an ability to spin chaos into comedy.&rdquo;</p>
+            <cite>Bristol 24/7</cite>
+          </blockquote>
+          <blockquote class="review review--long">
+            <p>&ldquo;Their world-building is bewitching; conjuring a violent, gory Mad Max vibe alongside whimsical and, somehow, endearing characters.&rdquo;</p>
+            <cite>The Everyday Magazine</cite>
+          </blockquote>
+          <blockquote class="review review--long">
+            <p>&ldquo;I&rsquo;m still reeling at how such an intricate tale was woven on the spot &mdash; it&rsquo;s truly a gift this cast has been blessed with.&rdquo;</p>
+            <cite>Obscure Reviews</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="section section--sand">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="eyebrow">How it works</span>
+          <h2 class="display h-lg">No script. No plan. No survivors.</h2>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="card__num">01</div>
+            <h3 class="display">You suggest</h3>
+            <p>Before the show you tell us the one thing you&rsquo;d want to survive the apocalypse. Noise-cancelling headphones. Japanese toilets. Ballroom dancing. All real answers.</p>
+          </div>
+          <div class="card">
+            <div class="card__num">02</div>
+            <h3 class="display">We build a world</h3>
+            <p>One suggestion is pulled at random and the cast spin it into a full narrative adventure &mdash; characters, factions, villains and all &mdash; entirely on the spot.</p>
+          </div>
+          <div class="card">
+            <div class="card__num">03</div>
+            <h3 class="display">Nobody is safe</h3>
+            <p>Two hours (with an interval) of raiders, mutants, dodgy accents and questionable decisions. Every show is a one-off. You&rsquo;ll never see it again.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--yellow">
+      <div class="wrap cta-band">
+        <div>
+          <span class="eyebrow">Stay alive</span>
+          <h2 class="display h-md">New dates drop on Instagram first.</h2>
+        </div>
+        <a class="btn" href="https://www.instagram.com/wasteland_improv/" target="_blank" rel="noopener">Follow @wasteland_improv</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <a class="footer__logo" href="index.html"><img src="assets/logo-white-mobile.png" alt="Tales From The Wasteland" width="1200" height="352"></a>
+          <p>An improvised post-apocalyptic adventure comedy from Bristol. Born out of the Bristol Improv Theatre&rsquo;s Unscripted Players programme, now roaming the wasteland at large.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="shows.html">Shows</a></li>
+            <li><a href="about.html">About the Show</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="cast.html">Cast</a></li>
+            <li><a href="work-with-us.html">Work With Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/wasteland_improv/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/wastelandimprov" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="mailto:wastelandimprov@gmail.com">wastelandimprov@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span data-year>2026</span> Tales From The Wasteland</span>
+        <span>Artwork: Cloak &middot; Photography: Lee Pullen</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/shows.js"></script>
+</body>
+</html>
