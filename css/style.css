@@ -345,15 +345,16 @@ p { margin: 0 0 1em; }
   --hero-h: clamp(540px, 56.25vw, calc(100svh - var(--nav-h)));
   height: var(--hero-h);
   /*
-   * Typical viewports (most visitors): the 16:9 desert, which is the crop
-   * people actually see in a laptop/desktop hero. Wide windows switch to a
-   * much smaller full-width panorama so the unused left/right edges stay cheap.
+   * Desktop uses the yellow panorama at every width: fitted to the hero
+   * height and centred, so wider windows reveal more of the scene.
+   * Typical viewports get the full-res file; ultrawide gets a cheaper
+   * downscale of the same artwork (the extra width is mostly sky/edges).
    */
   background-color: #6b4a12;
-  background-image: url("../assets/hero-bg.jpg");
+  background-image: url("../assets/hero-bg-pano.jpg");
   background-image: image-set(
-    url("../assets/hero-bg.webp") type("image/webp"),
-    url("../assets/hero-bg.jpg") type("image/jpeg")
+    url("../assets/hero-bg-pano.webp") type("image/webp"),
+    url("../assets/hero-bg-pano.jpg") type("image/jpeg")
   );
   background-position: center bottom;
   background-size: cover;
@@ -364,10 +365,10 @@ p { margin: 0 0 1em; }
 
 @media (min-width: 1600px) {
   .hero {
-    background-image: url("../assets/hero-bg-pano.jpg");
+    background-image: url("../assets/hero-bg-pano-sm.jpg");
     background-image: image-set(
-      url("../assets/hero-bg-pano.webp") type("image/webp"),
-      url("../assets/hero-bg-pano.jpg") type("image/jpeg")
+      url("../assets/hero-bg-pano-sm.webp") type("image/webp"),
+      url("../assets/hero-bg-pano-sm.jpg") type("image/jpeg")
     );
   }
 }
