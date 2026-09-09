@@ -345,10 +345,9 @@ p { margin: 0 0 1em; }
   --hero-h: clamp(540px, 56.25vw, calc(100svh - var(--nav-h)));
   height: var(--hero-h);
   /*
-   * Desktop uses the yellow panorama at every width: fitted to the hero
-   * height and centred, so wider windows reveal more of the scene.
-   * Typical viewports get the full-res file; ultrawide gets a cheaper
-   * downscale of the same artwork (the extra width is mostly sky/edges).
+   * Desktop: 16:9 centre crop of the yellow panorama, served at 2560px so
+   * the hero isn't stretching a 284px-tall strip. Sides of the original
+   * pano are trimmed; wider windows get a slightly less-trimmed crop.
    */
   background-color: #6b4a12;
   background-image: url("../assets/hero-bg-pano.jpg");
@@ -365,10 +364,10 @@ p { margin: 0 0 1em; }
 
 @media (min-width: 1600px) {
   .hero {
-    background-image: url("../assets/hero-bg-pano-sm.jpg");
+    background-image: url("../assets/hero-bg-pano-wide.jpg");
     background-image: image-set(
-      url("../assets/hero-bg-pano-sm.webp") type("image/webp"),
-      url("../assets/hero-bg-pano-sm.jpg") type("image/jpeg")
+      url("../assets/hero-bg-pano-wide.webp") type("image/webp"),
+      url("../assets/hero-bg-pano-wide.jpg") type("image/jpeg")
     );
   }
 }
