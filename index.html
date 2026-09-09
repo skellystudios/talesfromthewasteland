@@ -10,6 +10,10 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/hero.jpg">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" type="image/webp" href="assets/hero-bg.webp" media="(min-width: 901px) and (max-width: 1599px)">
+  <link rel="preload" as="image" type="image/webp" href="assets/hero-bg-pano.webp" media="(min-width: 1600px)">
+  <link rel="preload" as="image" type="image/webp" href="assets/hero-bg-mobile.webp" media="(max-width: 900px)">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="assets/cast-group-mobile.webp 760w, assets/cast-group.webp 1200w" imagesizes="(max-width: 900px) 80vw, 45vw">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@500;600&family=Kalam:wght@700&display=swap" rel="stylesheet">
@@ -20,7 +24,7 @@
   <header class="nav">
     <div class="nav__inner">
       <a class="nav__logo" href="index.html" aria-label="Tales From The Wasteland — home">
-        <img src="assets/logo-white-mobile.png" alt="Tales From The Wasteland" width="1200" height="352">
+        <img src="assets/logo-white-mobile.png" alt="Tales From The Wasteland" width="400" height="117">
       </a>
 
       <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
@@ -49,33 +53,38 @@
       <div class="hero__art" aria-hidden="true">
         <picture>
           <source type="image/webp"
-                  srcset="assets/cast-group-mobile.webp 760w, assets/cast-group.webp 1400w"
+                  srcset="assets/cast-group-mobile.webp 760w, assets/cast-group.webp 1200w"
                   sizes="(max-width: 900px) 80vw, 45vw">
           <img class="hero__cast"
                src="assets/cast-group.png"
-               srcset="assets/cast-group-mobile.png 760w, assets/cast-group.png 1400w"
+               srcset="assets/cast-group-mobile.png 760w, assets/cast-group.png 1200w"
                sizes="(max-width: 900px) 80vw, 45vw"
-               alt="" width="1400" height="1673" fetchpriority="high">
+               alt="" width="1200" height="1434" fetchpriority="high">
         </picture>
       </div>
 
       <div class="hero__inner">
         <div class="hero__col">
           <blockquote class="hero__quote hero__quote--top">
-            <img class="hero__quote-img" src="assets/quote-raucous.png" alt="&lsquo;A raucous and zany atmosphere&rsquo;" width="1000" height="192">
+            <img class="hero__quote-img" src="assets/quote-raucous.png" alt="&lsquo;A raucous and zany atmosphere&rsquo;" width="700" height="134">
             <cite>The Everyday</cite>
           </blockquote>
 
           <h1 class="hero__logo" id="hero-title">
             <picture>
-              <source media="(max-width: 900px)" srcset="assets/logo-yellow-mobile.png" width="1200" height="352">
+              <source type="image/webp" media="(max-width: 900px)" srcset="assets/logo-yellow-mobile.webp">
+              <source type="image/webp" srcset="assets/logo-yellow.webp">
+              <source media="(max-width: 900px)" srcset="assets/logo-yellow-mobile.png">
               <img src="assets/logo-yellow.png" alt="Tales From The Wasteland" width="1024" height="266">
             </picture>
-            <img class="hero__tagline" src="assets/tagline.png" alt="A Post-Apocalyptic Improvised Comedy" width="946" height="273">
+            <picture>
+              <source type="image/webp" srcset="assets/tagline.webp">
+              <img class="hero__tagline" src="assets/tagline.png" alt="A Post-Apocalyptic Improvised Comedy" width="800" height="231">
+            </picture>
           </h1>
 
           <blockquote class="hero__quote hero__quote--bottom">
-            <img class="hero__quote-img" src="assets/quote-gritty.png" alt="&lsquo;At once gritty and oddly endearing&rsquo;" width="997" height="205">
+            <img class="hero__quote-img" src="assets/quote-gritty.png" alt="&lsquo;At once gritty and oddly endearing&rsquo;" width="700" height="144">
             <cite>Bristol 24/7</cite>
           </blockquote>
         </div>
@@ -83,7 +92,7 @@
     </section>
 
     <!-- ================= INTRO ================= -->
-    <section class="section section--dark">
+    <section class="section section--dark section--after-hero">
       <div class="wrap two-col">
         <div>
           <span class="eyebrow">What is this?</span>
@@ -182,7 +191,7 @@
     <div class="wrap">
       <div class="footer__grid">
         <div>
-          <a class="footer__logo" href="index.html"><img src="assets/logo-white-mobile.png" alt="Tales From The Wasteland" width="1200" height="352"></a>
+          <a class="footer__logo" href="index.html"><img src="assets/logo-white-mobile.png" alt="Tales From The Wasteland" width="400" height="117"></a>
           <p>An improvised post-apocalyptic adventure comedy from Bristol. Born out of the Bristol Improv Theatre&rsquo;s Unscripted Players programme, now roaming the wasteland at large.</p>
         </div>
         <div>

@@ -326,11 +326,6 @@ window.WASTELAND_SHOWS = [
 
           '<aside class="show-layout__side">' +
             '<div class="booking">' +
-              '<div class="booking__price">' +
-                (show.priceFrom ? '<span class="booking__from">Tickets from</span><b>' + fmtPrice(show.priceFrom) + '</b>' : '<b>Tickets</b>') +
-                (gone ? '<span class="show__status">Past show</span>'
-                  : statusLabel(show.status) ? '<span class="show__status show__status--' + esc(show.status) + '">' + statusLabel(show.status) + '</span>' : '') +
-              '</div>' +
               '<dl class="facts">' +
                 facts.map(function (f) { return '<div><dt>' + f[0] + '</dt><dd>' + f[1] + '</dd></div>'; }).join("") +
               '</dl>' +
