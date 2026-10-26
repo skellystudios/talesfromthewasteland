@@ -105,6 +105,22 @@ window.WASTELAND_SHOWS = [
     ticketUrl: "https://tobaccofactorytheatres.com/shows/tales-from-the-wasteland-post-apocalyptic-improv-2",
     status: "on-sale",
     note: ""
+  },
+  {
+    slug: "loco-klub-2027-05-12",
+    date: "2027-05-12",
+    time: "19:30",
+    city: "Bristol",
+    venue: "Loco Klub",
+    address: "Bristol Temple Meads, Bristol BS1 6QH",
+    mapUrl: "https://maps.google.com/?q=Loco+Klub+Bristol",
+    price: "£12",
+    priceFrom: 12,
+    ageGuidance: "16+",
+    runtime: "1 hr 40 mins incl. interval",
+    ticketUrl: "https://hdfst.uk/e164209",
+    status: "on-sale",
+    note: ""
   }
 ];
 
